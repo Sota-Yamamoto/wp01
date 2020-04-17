@@ -1,0 +1,800 @@
+/*
+Theme Name: sample_marketing
+Theme URI: [ここにテーマのURLを記述します]
+Author: [ここにテーマの作成者名を記述します]
+Author URI: [ここにテーマの制作者のURLを記述します]
+Description: [ここにテーマの説明文を記述します]
+Version: 1.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: sample_marketing
+
+This theme is licensed under the GPL.
+Copyright (c) 2016 Sample Marketing.inc. All Rights Reserved.
+*/
+@charset "utf-8";
+
+/* ------------------------------------------------ */
+/* 1.共通
+/* ------------------------------------------------ */
+
+/* ボックスサイズの計算方法を指定 */
+* {
+	box-sizing: border-box;
+}
+
+/* ページ全体の基本スタイル */
+body {
+	color: #4d4d4d;
+	font-size: 14px;
+	font-family: メイリオ,Meiryo,"ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro","ＭＳ Ｐゴシック",sans-serif;
+	line-height: 1.6;
+}
+
+/* 段落の基本スタイル */
+p {
+	padding-bottom: 1.5em;
+}
+
+/* 2等分で横並び */
+.col-6 {
+	width: 50%;
+}
+
+/* 3等分で横並び */
+.col-4 {
+	width: 33.33%;
+}
+
+/* リンクの基本スタイル */
+a {
+	color: #007de1;
+	transition: 0.5s;
+}
+
+/* リンクにマウスが乗ったときのスタイル */
+a:hover {
+	opacity: 0.7;
+}
+
+/* 編集リンク */
+a.post-edit-link {
+	-webkit-appearance: button;
+	-moz-appearance: button;
+	appearance: button;
+	display: block;
+	text-decoration: none;
+	color: #333;
+	width: 5em;
+	padding: 0.4em 1em;
+	text-align: center;
+}
+
+/* 画像の基本スタイル */
+img {
+	vertical-align: bottom;
+}
+img.alignleft {
+	float: left;
+	padding-right: 15px;
+	padding-bottom: 15px;
+}
+
+img.alignright {
+	float: right;
+	padding-left: 15px;
+	padding-bottom: 15px;
+}
+
+/* 文字の揃え */
+.alignleft {
+	text-align: left;
+}
+
+.aligncenter {
+	text-align: center;
+}
+
+.alignright {
+	text-align: right;
+}
+
+/* 写真のフレーム */
+.photoframe {
+	border: 1px solid #eeeeee;
+	border-radius: 4px;
+	box-shadow: 1px 1px 1px #999999;
+	padding: 15px;
+}
+
+/* 一覧へ移動ボタン（続きを読むボタン） */
+a.readmore {
+	display: block;
+	margin-left: auto;
+	width: 6em;
+	height: 2em;
+	line-height: 2;
+	border: 1px solid #eeeeee;
+	border-radius: 4px;
+	box-shadow: 1px 1px 1px #999999;
+	text-align: center;
+	text-decoration: none;
+	padding-left: 1em;
+	position: relative;
+}
+a.readmore::before {
+	content: '▲';
+	-webkit-transform: rotate(90deg) translateX(-50%);
+	transform: rotate(90deg) translateX(-50%);
+	position: absolute;
+	top: 50%;
+	left: 15px;
+	width: 14px;
+	height: 14px;
+}
+
+/* パンくずリスト */
+.breadcrumbs {
+	margin-bottom: 20px;
+	font-size: 12px;
+}
+
+/* PC専用コンテンツを表示 */
+.pc {
+	display: block;
+}
+
+/* スマホ専用コンテンツを非表示 */
+.sp {
+	display: none;
+}
+
+/* ------------------------------------------------ */
+/* 2.レイアウト
+/* ------------------------------------------------ */
+
+/* ページ全体を囲む枠 */
+#wrapper {
+	margin: 0 auto;
+	width: 960px;
+}
+
+/* ------------------------------------------------ */
+/* 3.ヘッダー
+/* ------------------------------------------------ */
+
+/* エリア外枠のスタイル */
+header {
+	padding-top: 15px;
+	padding-bottom: 25px;
+}
+
+/* 見出しのスタイル */
+h1 {
+	color: #999999;
+	font-size: 12px;
+	font-weight: normal;
+	margin-bottom: 15px;
+}
+
+/* ロゴのスタイル */
+#header-logo img {
+	width: 300px;
+	height: 60px;
+}
+
+/* ------------------------------------------------ */
+/* 4.グローバルナビゲーション
+/* ------------------------------------------------ */
+
+/* エリア外枠のスタイル */
+#gNav {
+	margin-bottom: 25px;
+}
+
+/* メニューリストを囲む枠 */
+#gNav ul {
+	display: -webkit-flex;	/* safari用 */
+	display: flex;
+}
+
+/* メニューリストの共通スタイル */
+#gNav li {
+	border-left: 1px solid #7dceec;
+	text-align: center;
+	width: 25%;
+}
+
+/* 一番右のメニューリストのスタイル */
+#gNav li:last-child {
+	border-right: 1px solid #7dceec;
+}
+
+/* メニューのリンクスタイル */
+#gNav a {
+	display: block;
+	font-size: 11px;
+	line-height: 44px;
+	text-decoration: none;
+}
+
+/* メニューにマウスを乗せたときのスタイル */
+#gNav a:hover {
+	background-color: #BDF5FE;
+}
+
+/* メニューの英文字スタイル */
+#gNav a span {
+	color: #007de1;
+	display: block;
+	font-family: arial;
+	font-size: 10px;
+}
+
+/* 現在ページのメニュースタイル */
+#gNav .current-menu-item a,
+#gNav .current-menu-item a span {
+	background-color: #2AA8E5;
+	color: #ffffff;
+}
+
+/* ------------------------------------------------ */
+/* 5.コンテンツ
+/* ------------------------------------------------ */
+
+/* エリア外枠のスタイル */
+#contents {
+	margin-bottom: 60px;
+}
+
+/* エリア内枠のスタイル */
+#contents .inner {
+	margin-bottom: 25px;
+}
+
+/* 中見出し */
+h2 {
+	background-color: #2AA8E5;
+	color: #ffffff;
+	font-size: 18px;
+	margin-bottom: 25px;
+	padding: 0.5em 1em;
+}
+
+/* 小見出し */
+h3 {
+	border: 1px solid #eeeeee;
+	border-radius: 4px;
+	box-shadow: 1px 1px 1px #999999;
+	font-weight: bold;
+	margin-bottom: 25px;
+	padding: 0.2em 1em;
+}
+
+/* 事業内容のボックス */
+.biz-box {
+	padding: 0 25px;
+	margin-bottom: 40px;
+}
+
+/* 事業内容の見出し */
+.biz-box h3 {
+	text-align: center;
+}
+
+/* 事業内容の画像 */
+.biz-box img {
+	margin-bottom: 25px;
+	width: 100%;
+}
+
+/* ------------------------------------------------ */
+/* 6.フッター
+/* ------------------------------------------------ */
+
+/* エリア外枠のスタイル */
+footer {
+	background: #2AA8E5;
+	color: #ffffff;
+	padding: 1em;
+}
+
+/* 著作権表記 */
+#copyright {
+	text-align: center;
+	margin-top: 20px;
+	display: block;
+}
+
+/* ------------------------------------------------ */
+/* 7.フッターナビゲーション
+/* ------------------------------------------------ */
+
+/* メニューリストを囲む枠 */
+#fNav ul {
+	display: -webkit-flex;				/* safari用 */
+	display: flex;
+	-webkit-justify-content: center;	/* safari用 */
+	justify-content: center;
+	width: 100%;
+	margin: 0 auto;
+}
+
+/* メニューリストの共通スタイル */
+#fNav li {
+	padding: 0 15px;
+	border-right: 1px solid #ffffff;
+}
+
+/* 一番最後のメニュー */
+#fNav li:last-child {
+	border-right: none;
+	padding-right: 0;
+}
+
+/* メニューリンクの共通スタイル */
+#fNav a {
+	color: #ffffff;
+	text-decoration: none;
+}
+
+/* メニューリンクにマウスを乗せたときのスタイル */
+#fNav a:hover {
+	background-color: #ffffff;
+	color: #2AA8E5;
+	opacity: 1;
+}
+
+/* ------------------------------------------------ */
+/* 8.トップページ専用スタイル
+/* ------------------------------------------------ */
+
+/* メインビジュアル */
+#main_visual {
+	width: 100%;
+}
+
+/* 新着情報のリスト */
+#infolist {
+	display: -webkit-flex;						/* safari用 */
+	display: flex;
+	-webkit-justify-content: space-between;		/* safari用 */
+	justify-content: space-between;
+	margin-bottom: 15px;
+}
+
+#infolist li {
+	width: 19%;
+	margin-bottom: 15px;
+}
+
+#infolist .thumb {
+	margin-bottom: 10px;
+}
+
+#infolist .thumb img {
+	width: 100%;
+	height: auto;
+}
+
+#infolist .date {
+	font-weight: bold;
+	font-size: 12px;
+}
+
+#infolist a {
+	color: inherit;
+}
+
+/* 事業内容の枠 */
+#our-business {
+	display: -webkit-flex;		/* safari用 */
+	display: flex;
+	-webkit-flex-wrap: wrap;	/* safari用 */
+	flex-wrap: wrap;
+}
+
+/* ------------------------------------------------ */
+/* 9.事業内容ページ専用スタイル
+/* ------------------------------------------------ */
+
+/* ------------------------------------------------ */
+/* 10.会社概要ページ専用スタイル
+/* ------------------------------------------------ */
+
+/* 会社概要のテーブル */
+#company-prof {
+	margin: 0 auto;
+	width: 80%;
+}
+
+/* 会社概要のテーブルセル */
+#company-prof th,
+#company-prof td {
+	border: 1px solid #2AA8E5;
+	padding: 1em;
+}
+
+/* 会社概要の見出しセル */
+#company-prof th {
+	white-space: nowrap;
+	background-color: #2AA8E5;
+	color: #ffffff;
+	border-bottom: 1px solid #ffffff;
+}
+
+/* 最終行の見出しセルの境界線を着色 */
+#company-prof tr:last-child th {
+	border-bottom: 1px solid #2AA8E5;
+}
+
+/* ------------------------------------------------ */
+/* 11.プライバシーポリシーページ専用スタイル
+/* ------------------------------------------------ */
+
+/* プライバシーポリシーのリスト枠 */
+#our-policy ol {
+	margin-bottom: 25px;
+}
+
+/* プライバシーポリシーのリスト */
+#our-policy li {
+	list-style: decimal inside;
+}
+
+/* ------------------------------------------------ */
+/* 12.お問い合わせページ専用スタイル
+/* ------------------------------------------------ */
+
+/* お問い合わせフォーム */
+#mail-form table {
+	width: 700px;
+	margin: 0 auto;
+}
+
+#mail-form th {
+	font-weight: bold;
+	text-align: left;
+	width: 240px;
+	background: #f0f8ff;
+	vertical-align: top;
+}
+
+#mail-form th,
+#mail-form td {
+	border: 1px solid #ccc;
+	padding: 0.5em 0.5em;
+}
+
+#mail-form th span {
+	color: #fff;
+	padding: 0.1em 0.8em;
+	margin-right: 0.5em;
+	border-radius: 4px;
+	box-shadow: 1px 1px 1px 0 rgba(0,0,0,0.2);
+}
+
+#mail-form th span.required {
+	background: red;
+}
+
+#mail-form th span.notrequired {
+	background: #6495ed;
+}
+
+#mail-form tr:last-child td {
+	text-align: center;
+	border: none;
+	border-top: 1px solid #ccc;
+}
+
+#mail-form input[type="text"],
+#mail-form textarea {
+	width: 100%;
+	border: 1px solid #ccc;
+	padding: 0.2em 0.5em;
+	font-family: inherit;
+}
+
+#mail-form textarea {
+	min-height: 100px;
+}
+
+#mail-form input[type="submit"],
+#mail-form input[type="button"],
+#mail-form input[type="reset"] {
+	width: 120px;
+	background: #6495ed;
+	border: none;
+	color: #fff;
+	padding: 0.2em 0.5em;
+	margin-top: 20px;
+	height: 40px;
+	display: inline-block;
+	vertical-align: top;
+	font-family: inherit;
+}
+
+/* ------------------------------------------------ */
+/* 13.ブログページ専用スタイル
+/* ------------------------------------------------ */
+
+/* 投稿日付とカテゴリー */
+.entry-meta {
+	margin-bottom: 15px;
+	font-weight: bold;
+	font-size: 90%;
+}
+
+/* 投稿本文の枠 */
+.entry-content {
+	margin-bottom: 15px;
+}
+
+.entry-content::after {
+	content: '';
+	display: block;
+	clear: both;
+}
+
+/* アーカイブページのサムネイル */
+body.archive .entry-content img {
+	float: left;
+	margin: 0 15px 15px 0;
+	width: 250px;
+	height: auto;
+}
+
+/* ------------------------------------------------ */
+/* レスポンシブ（767px以下）
+/* ------------------------------------------------ */
+@media only screen and (max-width:767px) {
+
+	/* ------------------------------------------------ */
+	/* 1.共通
+	/* ------------------------------------------------ */
+
+	/* PC専用コンテンツを非表示 */
+	.pc {
+		display: none;
+	}
+
+	/* スマホ専用コンテンツを表示 */
+	.sp {
+		display: block;
+	}
+
+	/* グリッド型のボックスを縦並びにする */
+	.col-4, .col-6, .col-8 {
+		display: block;
+		width: 100%;
+	}
+
+	/* ------------------------------------------------ */
+	/* 2.レイアウト
+	/* ------------------------------------------------ */
+
+	/* ページ全体を画面の横幅に合せる */
+	#wrapper {
+		width: 100%;
+	}
+
+	/* ------------------------------------------------ */
+	/* 3.ヘッダー
+	/* ------------------------------------------------ */
+
+	/* 見出しを非表示 */
+	h1 {
+		display: none;
+	}
+
+	/* ロゴを中央寄せ */
+	#header-logo {
+		text-align: center;
+	}
+
+	/* ------------------------------------------------ */
+	/* 4.グローバルナビゲーション
+	/* ------------------------------------------------ */
+	/* メニューを3列で表示する */
+	#gNav ul {
+		-webkit-flex-wrap: wrap;
+		flex-wrap: wrap;
+	}
+	#gNav li {
+		border-left: 1px solid #7dceec;
+		border-bottom: 1px solid #7dceec;
+		width: 33.33%;
+	}
+	/* メニューの4隅に枠線を付ける */
+	#gNav li:nth-child(3n) {
+		border-right: 1px solid #7dceec;
+	}
+	#gNav li:nth-child(1),
+	#gNav li:nth-child(2),
+	#gNav li:nth-child(3) {
+		border-top: 1px solid #7dceec;
+	}
+
+	/* ------------------------------------------------ */
+	/* 5.コンテンツ
+	/* ------------------------------------------------ */
+
+	/* エリア内枠のスタイル */
+	#contents .inner {
+		padding: 0 10px;
+	}
+
+	/* 見出しを左右中央寄せ */
+	h2 {
+		text-align: center;
+		font-size: 16px;
+	}
+
+	/* 事業内容のボックス */
+	.biz-box {
+		padding: 0 0;
+	}
+
+	/* ------------------------------------------------ */
+	/* 6.フッター
+	/* ------------------------------------------------ */
+
+	/* エリアの外枠 */
+	footer {
+		display: block;
+		padding: 25px 10px;
+	}
+
+	/* 著作権表記 */
+	#copyright {
+		text-align: center;
+		font-size: 12px;
+	}
+
+	/* ------------------------------------------------ */
+	/* 7.フッターナビゲーション
+	/* ------------------------------------------------ */
+
+	/* メニューを縦並びにする */
+	#fNav ul {
+		display: block;
+		width: 100%;
+	}
+
+	/* 各メニュー要素の装飾 */
+	#fNav li {
+		background-color: #ffffff;
+		margin-bottom: 1px;
+		border-right: none;
+		position: relative;
+		padding: 0;
+	}
+
+	/* 各メニューのリンク領域を枠いっぱいに広げて上下中央寄せ */
+	#fNav a {
+		color: #2AA8E5;
+		display: block;
+		padding: 10px;
+	}
+
+	/* 各メニュー右端のリンクボタン */
+	#fNav li a::before {
+		content: '>';
+		position: absolute;
+		top: 10px;
+		right: 7px;
+		color: #fff;
+		background-color: #2AA8E5;
+		border: 2px solid #ffffff;
+		border-radius: 50%;
+		width: 20px;
+		height: 20px;
+		line-height: 20px;
+		padding: 0;
+		text-align: center;
+	}
+
+	/* ------------------------------------------------ */
+	/* 8.トップページ専用スタイル
+	/* ------------------------------------------------ */
+
+	/* メインビジュアル */
+	#contents #main_visual.inner {
+		padding: 0 0;
+	}
+
+	/* 新着情報のリスト */
+	#infolist {
+		-webkit-flex-wrap: wrap;	/* safari用 */
+		flex-wrap: wrap;
+	}
+	#infolist li {
+		width: 48%;
+	}
+
+	/* 事業内容 */
+	#our-business {
+		display: block;
+	}
+
+	/* ------------------------------------------------ */
+	/* 9.事業内容ページ専用スタイル
+	/* ------------------------------------------------ */
+
+	/* ------------------------------------------------ */
+	/* 10.会社概要ページ専用スタイル
+	/* ------------------------------------------------ */
+
+	/* 表を枠いっぱいに広げる */
+	#company-prof {
+		width: 100%;
+	}
+
+	/* 表の各セルをブロック要素に変更して縦並びにする */
+	#company-prof th,
+	#company-prof td {
+		display: block;
+	}
+
+	/* 表の見出しセル */
+	#company-prof th {
+		border: 1px solid #eeeeee;
+		border-radius: 4px;
+		box-shadow: 1px 1px 1px #999999;
+		font-weight: bold;
+		padding: .2em 1em;
+		background-color: #ffffff;
+		color: initial;
+		text-align: left;
+	}
+
+	/* 最終行の見出しセルは境界線を表示する */
+	#company-prof tr:last-child th {
+		border-bottom: 1px solid #eeeeee;
+	}
+
+	/* 表のデータセルは境界線を表示しない */
+	#company-prof td {
+		border: none;
+	}
+
+	/* ------------------------------------------------ */
+	/* 11.プライバシーポリシーページ専用スタイル
+	/* ------------------------------------------------ */
+
+	/* ------------------------------------------------ */
+	/* 12.お問い合わせページ専用スタイル
+	/* ------------------------------------------------ */
+	#mail-form table {
+		width: 100%;
+	}
+	#mail-form th,
+	#mail-form td {
+		display: block;
+		width: 100%;
+		box-sizing: border-box;
+		border-bottom: none;
+	}
+
+	#mail-form tr:last-child td {
+		border-top: 1px solid #ccc;
+	}
+
+	/* ------------------------------------------------ */
+	/* 13.ブログページ専用スタイル
+	/* ------------------------------------------------ */
+
+	/* エリア内の画像 */
+	.single #contents img {
+		max-width:100%;
+		height:100%;
+	}
+
+	/* アーカイブページのサムネイル */
+	body.archive .entry-content img {
+		float: none;
+		margin: 0 auto 15px auto;
+		width: 100%;
+	}
+}
