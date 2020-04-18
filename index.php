@@ -7,10 +7,10 @@
   <!--記事-->
   <article>
     <!--ページのタイトル-->
-    <h2><<?php the_title(); ?></h2>
+    <h2><?php the_title(); ?></h2>
     <!--ページの本文-->
     <div class="entry-content">
-      <<?php the_content(); ?>
+      <?php the_content(); ?>
     </div>
   </article>
   <!--//記事-->
@@ -18,4 +18,4 @@
   <!--記事のループ-->
 </section>
 <!--//コンテンツエリア-->
-<<?php get_footer(); ?>
+<?php get_footer(); ?>

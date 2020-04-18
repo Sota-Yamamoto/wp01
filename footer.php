@@ -12,7 +12,6 @@
       <small id="copyright">Copyright (c) 2016 Sample Marketing.inc. All Rights Reserved.</small>
     </footer>
     </div>
-    <!-- フッターエリア -->
     <?php wp_footer(); ?>
 </body>
 </html>
