@@ -21,11 +21,25 @@ function the_slug() {
 // =======================================
 //	アイキャッチ画像を設定できるようにする
 // =======================================
-add_theme_support('post_thumbnails');
+add_theme_support('post-thumbnails');
 
-// =======================================
-//	アイキャッチ画像を設定できるようにする
-// =======================================
+/* 【管理画面】カスタム投稿タイプの追加 */
+add_action( 'init', 'create_post_type' );
+
+function create_post_type() {
+  register_post_type( 'product',
+    array(
+      'labels' => array(
+      'name' => __( 'Product' ),
+      'singular_name' => __( 'Product' )
+    ),
+      'public' => true,
+      'has_archive' => true,
+      'supports' => array('title','editor','thumbnail','custom-fields','excerpt','author','trackbacks','comments','revisions','page-attributes')
+    )
+  );
+}
+
 function my_excerpt_more( $more ) {
 	$url = get_permalink();
 	$html = '<a href="'. $url . '" class="readmore"> 続きへ</a>';
